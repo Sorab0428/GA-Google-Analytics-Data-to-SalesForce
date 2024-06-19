@@ -2,7 +2,31 @@
 
 ## Introduction
 
-記得寫
+GA-Google-Analytics-Data-to-SalesForce is a project focused on integrating data from Google Analytics into Salesforce. This integration aims to harness the strengths of both platforms, enhancing business insights and optimizing marketing strategies. The process involves extracting pertinent data from Google Analytics using APIs or data connectors and seamlessly importing it into Salesforce. This unified dataset empowers users to generate custom reports, build insightful dashboards, and establish automated workflows within Salesforce, thereby maximizing operational efficiency and decision-making capabilities.
+
+## What is Google-Analytics(GA)
+
+Google Analytics is a powerful web analytics service offered by Google that helps website owners and marketers track and analyze various aspects of website traffic and user behavior.
+
+## Key Features
+
+1. **Traffic Analysis**: Tracks the number of visitors, page views, and sessions on a website over time. It distinguishes between new and returning visitors.
+
+2. **Audience Insights**: Provides demographic information (age, gender, interests) and geographic data (location) about website visitors.
+
+3. **Behavioral Analysis**: Shows how users navigate through the site, which pages they visit, how long they stay on each page, and where they exit.
+
+4. **Conversion Tracking**: Allows setting up goals (e.g., purchases, sign-ups) and tracking their achievement.
+
+5. **Acquisition Channels**: Identifies traffic sources (search engines, social media, referrals) and evaluates marketing campaign effectiveness.
+
+6. **Customization and Reporting**: Enables creation of custom reports, dashboards, and segments for in-depth analysis.
+
+## How Google Analytics Works
+
+Google Analytics works by placing a small tracking code on each page of a website. This code collects visitor data and sends it to Google's servers for processing. The insights derived from Google Analytics help businesses understand their audience better, improve user experience, and optimize marketing strategies.
+
+For more detailed information and setup instructions, visit the [Google Analytics website](https://analytics.google.com/).
 
 ## Before You Start
 
@@ -188,10 +212,13 @@ _Afterward, a prompt will appear to log in to your Google account, select the pr
 Content-Type:application/x-www-form-urlencoded
 
 \*body
-client_id:your client_id
-client_secret:your client_secret
-refresh_token:your refresh_token
-grant_type:refresh_token
+
+```JS
+"client_id":your client_id,
+"client_secret":your client_secret,
+"refresh_token":your refresh_token,
+"grant_type":refresh_token
+```
 
 \*The response will like that
 
@@ -209,8 +236,11 @@ grant_type:refresh_token
 > Subsequently, you can retrieve data by sending a POST request to https://analyticsdata.googleapis.com/v1beta/properties/{resourceID}:runReport.
 
 \*header
+
+```JS
 Content-Type:application/json
 Authorization:"Bearer " + "your access_token"
+```
 
 \*body
 
